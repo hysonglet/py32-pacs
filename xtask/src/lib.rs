@@ -1,4 +1,4 @@
-use std::fs;
+use std::{fs, thread::sleep, time::Duration};
 use xshell::cmd;
 
 pub static PACS: &[(&str, &str)] = &[
@@ -162,5 +162,6 @@ pub fn publish(dry_run: bool) {
             cmd = cmd.arg("--dry-run").arg("--no-verify");
         }
         cmd.run().unwrap();
+        sleep(Duration::from_secs(10));
     }
 }
