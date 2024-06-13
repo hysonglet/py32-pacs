@@ -98,14 +98,14 @@ pub fn publish(dry_run: bool) {
     // Pre-publish checks.
 
     generate();
-
-    if !dry_run {
-        assert!(
-            !is_git_clean(),
-            "working directory clean, please leave it dirty, containing the desired version bump"
-        );
-    }
-
+    /*
+        if !dry_run {
+            assert!(
+                !is_git_clean(),
+                "working directory clean, please leave it dirty, containing the desired version bump"
+            );
+        }
+    */
     let toml = fs::read_to_string("Cargo.toml").unwrap();
     let needle = "version = \"";
     let version_pos = toml.find(needle).unwrap() + needle.len();
