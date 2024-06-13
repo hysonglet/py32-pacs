@@ -161,7 +161,7 @@ pub fn publish(dry_run: bool) {
         if dry_run {
             cmd = cmd.arg("--dry-run").arg("--no-verify");
         }
-        cmd.run().unwrap();
+        let _ = cmd.run();
         // Avoiding crate.io publish
         sleep(Duration::from_secs(10));
     }
