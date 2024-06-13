@@ -1,0 +1,21 @@
+[package]
+name = "PY32f040xx-pac"
+description = "Peripheral Access Crate for Puya's PY32f040xx microcontroller"
+documentation = "https://docs.rs/PY32f040xx-pac"
+version.workspace = true
+edition.workspace = true
+keywords.workspace = true
+license.workspace = true
+repository.workspace = true
+readme.workspace = true
+
+[dependencies]
+cortex-m.workspace = true
+vcell.workspace = true
+
+[dependencies.cortex-m-rt]
+optional = true
+workspace = true
+
+[features]
+rt = ["cortex-m-rt/device"]
