@@ -150,7 +150,7 @@ pub fn publish(dry_run: bool) {
     if !dry_run {
         let message = format!("Release v{}", version);
         let tag = format!("v{}", version);
-        cmd!("git commit -am {message}").run().unwrap();
+        let _ = cmd!("git commit -am {message}").run().unwrap();
         cmd!("git tag -a {tag} -m {tag}").run().unwrap();
     }
 
