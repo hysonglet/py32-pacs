@@ -1,6 +1,10 @@
 use std::{fs, thread::sleep, time::Duration};
 use xshell::cmd;
 
+// Use thumbv6m-none-eabi for ARM Cortex-M0 and Cortex-M0+
+// Use thumbv7m-none-eabi for ARM Cortex-M3
+// Use thumbv7em-none-eabi for ARM Cortex-M4 and Cortex-M7 (no FPU support)
+// Use thumbv7em-none-eabihf for ARM Cortex-M4F and Cortex-M7F (with FPU support)
 pub static PACS: &[(&str, &str)] = &[
     ("PY32T020xx", "thumbv6m-none-eabi"),
     ("PY32c640xx", "thumbv6m-none-eabi"),
