@@ -164,6 +164,6 @@ pub fn publish(dry_run: bool) {
         let _ = cmd.run();
 
         // Avoiding crate.io publish
-        sleep(Duration::from_secs(10));
+        sleep(Duration::from_secs(30));
     }
 }
